@@ -3,32 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Task 1</title>
 </head>
 <body>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-12" style="background-color: skyblue; padding-left: 40%; height: 40px; padding-top: 10px; font-size: medium;" > <b>ETHNUS LAYOUT</b></div>
-        </div>
+    <script>
+        function reverseNumber() {
+            let inputNumber = parseInt(document.getElementById('inputNumber').value);
+            let reversedNumber = 0;
+            let remainder;
 
-        <div class="row" style="background-color: grey; color: white; height: 40px; padding-top: 10px;">
-            <div class="col-sm-1">Home</div>
-            <div class="col-sm-1">Menu</div>
-            <div class="col-sm-1">About</div>
-            <div class="col-sm-1">Contact</div>
-            <div class="col-sm-6"></div>
-            <div class="col-sm-1">Signup</div>
-            <div class="col-sm-1">Login</div>
-        </div>
+            while (inputNumber !== 0) {
+                remainder = inputNumber % 10;
+                reversedNumber = reversedNumber * 10 + remainder;
+                inputNumber = Math.floor(inputNumber / 10);
+            }
 
-        <div class="row">
-            <div class="col-sm-10" style="padding-left: 80px; height: 400px;">Write your content here</div>
-            <div class="col-sm-2" style="background-color: rgb(53, 50, 50); padding: 10px;height: 800px; color: white;">This is</div>
-        </div>
-
-
-    </div>
+            document.getElementById('result').innerHTML = `Reversed Number: ${reversedNumber}`;
+        }
+    </script>
+    
+    <h1>Number Reversal</h1>
+    <p>Enter a number below to reverse it:</p>
+    <input type="number" id="inputNumber" placeholder="Enter a number">
+    <button onclick="reverseNumber()">Reverse</button>
+    <p id="result"></p>
 </body>
 </html>
